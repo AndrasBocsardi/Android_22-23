@@ -1,0 +1,75 @@
+//1)
+fun main() {
+    val x1: Int = 3
+    val x2: Int = 2
+    val sum = x1 + x2
+    println(sum)
+    
+}
+
+
+//2)
+fun main() {
+    val daysOfWeek = listOf ("Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun")
+    for (item in daysOfWeek){
+        println(item)
+    }
+    
+}
+
+fun main() {
+    val daysOfWeek = listOf ("Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun")
+    val Tdays = daysOfWeek.filter{it.startsWith("T")}
+    println(Tdays)
+    
+}
+
+
+fun main() {
+    val daysOfWeek = listOf ("Mon", "Tue", "Wen", "Thu", "Fri", "Sat", "Sun")
+    val Edays = daysOfWeek.filter{it.contains("e")}
+    println(Edays)
+    
+}
+
+fun main() {
+    val daysOfWeek = listOf ("Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Sat", "Sun")
+    val sixDays = daysOfWeek.filter{it.length==6}
+    println(sixDays)
+    
+}
+
+//3)
+fun isPrime(number: Int): Boolean {
+
+    for (i in 2..number / 2) {
+        if (number % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+
+fun main() {
+   
+    val range = 100
+    for(i in 1..range){
+        if( isPrime(i) == true){
+            println(i)
+        }
+    }
+}
+
+//4)
+fun encode(text: String):String{
+    return Base64.getEncoder().encodeToString(text.toByteArray)
+}
+
+fun decode(text: String):String{
+    return Base64.getDecoder().encodeToString(text.toByteArray)
+}
+fun main() {
+   var text = "abdsmdsds"
+    
+    
+}
