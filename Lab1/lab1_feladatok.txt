@@ -73,3 +73,63 @@ fun main() {
     
     
 }
+
+//5)
+fun filterEven(vararg myList: Int){
+    println(myList.filter { x -> x % 2 == 0 })
+   
+} 
+
+fun main() {
+    var myList = listOf(1, 4, 8, 5, 6, 9, 12, 10, 33)
+	filterEven(myList)
+
+}
+
+
+//6)
+fun main() {
+    val numbers = listOf(1, 2, 3)
+    val daysOfWeek = listOf ("Monday", "Tuesday", "Friday")
+	println(numbers.map { it * 3 })
+    println(daysOfWeek.map { it.toUpperCase()})
+    println(daysOfWeek.map { it.first()})
+    println(daysOfWeek.map { it.length})
+    var temp = daysOfWeek.map{ it.length}.sum() / daysOfWeek.size
+    println(temp)
+    
+}
+
+//7)
+fun main() {
+    
+    val daysOfWeek = mutableListOf ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+	daysOfWeek.removeAll{x -> x in daysOfWeek.filter{it.contains("n")}}
+    println(daysOfWeek)
+    
+    for((index, value) in daysOfWeek.withIndex()){
+        println("Item at $index is $value")
+    }
+    
+    daysOfWeek.sort()
+    println(daysOfWeek)
+    
+}
+
+
+//8)
+import kotlin.random.Random
+
+fun main() {
+    
+
+  var randInts = (1..10).map { (0..10).random() }
+  randInts.forEach{println(it)}
+  //randInts.sort() ez valamiert nem mukodik
+  println(randInts.any { it%2 == 0}) // tartalmaz-e paros szamot
+  println(randInts.all { it%2 == 0}) // az osszes szam paros-e
+  var total = 0
+  
+  randInts.forEach{total += it}
+  println(total/randInts.count())
+}
