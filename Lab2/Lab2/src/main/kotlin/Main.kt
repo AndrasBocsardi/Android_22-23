@@ -21,12 +21,42 @@ fun main() {
             break
         }
         println("Result: ${word?.let { dict.find(it) }}")
-    }*/
+    }
     val name = "John Smith"
     val list = mutableListOf<String>("apple", "pear", "melon");
     println(list.joinByGivenSeparator("#"))
     println(name.Monogram())
-    println()
+    */
+    val date1 = Date(2000,5,5)
+    val date2 = Date(2020,5,5)
+    println(date1.IsLeapYear())
+
+    val dateList = mutableListOf<Date>()
+
+    while(dateList.size < 10){
+        val randYear = (-1000..3000).random()
+        val randMonth = (-100..100).random()
+        val randDay = (-50..50).random()
+        val date = Date(randYear,randMonth, randDay)
+
+        if(date.IsValid()){
+            dateList.add(date)
+        }else{
+            println(date)
+        }
+
+    }
+
+    println("#########################################################################")
+
+    dateList.forEach{ println(it) }
+    dateList.sort()
+    println("Sorted list: ")
+    dateList.forEach{ println(it) }
+    dateList.sortDescending()
+    println("Reverse sorted list: ")
+    dateList.forEach{ println(it) }
+
 
 
 }
